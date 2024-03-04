@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+            transition: transform 0.3s ease-in-out; /* Agregamos una transición para suavizar el movimiento */
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const img = document.querySelector('img');
+            
+            document.addEventListener('click', (event) => {
+                const x = event.clientX;
+                const y = event.clientY;
+                img.style.transform = `translate(${x}px, ${y}px)`;
+                console.log("Valor de x="+ x);
+                console.log("Valor de y="+ y);
+                console.log("Valor de img="+ img);
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <img src="balon.jpg" width="50" alt="balon">
+</body>
+</html>

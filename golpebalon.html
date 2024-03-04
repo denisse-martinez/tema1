@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('imagen_de_fondo.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            position: absolute;
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const img = document.querySelector('img');
+            let lastClickTime = null;
+            let lastClickX = null;
+            let lastClickY = null;
+
+            document.addEventListener('click', (event) => {
+                const currentTime = Date.now();
+                const x = event.clientX;
+                const y = event.clientY;
+
+                if (lastClickTime !== null) {
+                    const timeDiff = currentTime - lastClickTime;
+                    const distanceX = x - lastClickX;
+                    const distanceY = y - lastClickY;
+                    const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
+                    const speed = distance / timeDiff;
+                    console.log('Velocidad:', speed, 'px/ms');
+                }
+
+                lastClickTime = currentTime;
+                lastClickX = x;
+                lastClickY = y;
+
+                img.style.transform = `translate(${x}px, ${y}px)`;
+            });
+        });
+    </script>
+</head>
+<body>
+    <img src="balon.jpg" width="50" alt="balon">
+</body>
+</html>

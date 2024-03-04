@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function mostrarHoraYSaludo() {
+            const ahora = new Date();
+            const hora = ahora.getHours();
+            let saludo;
+
+            if (hora >= 5 && hora < 12) {
+                saludo = 'buenos días';
+            } else if (hora >= 12 && hora < 18) {
+                saludo = 'buenas tardes';
+            } else {
+                saludo = 'buenas noches';
+            }
+
+            alert(`La hora del sistema es: ${hora}:${ahora.getMinutes()} y ${saludo}`);
+        }
+        function alerta(boton){
+            if (boton.value == 'AM'){
+                saludo='buenos dias';
+            }else{
+                saludo ='buenas tardes';
+            }
+            //alert(saludo);
+            boton.value = saludo;
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="ok" onclick="alert('Hola')">
+    <input type="button" value="listo" onclick="confirm('su envio se ha realizado')">
+    <br>
+    <br>
+    <input type="button" value="AM" onclick="alerta(this)">
+    <input type="button" value="PM" onclick="alerta(this)">
+    <input type="button" value="Mostrar Hora y Saludo" onclick="mostrarHoraYSaludo()">
+</body>
+</html>

@@ -1,0 +1,19 @@
+div {
+    background-color: blue;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: blueviolet;
+}
+.verde{
+    background-color: green;
+}
+#divAzul{
+    background-color: blue;
+}
+#divAzul:hover{
+    background-color: pink;
+    font-size: 300px;
+}

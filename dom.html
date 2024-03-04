@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animación de Movimiento</title>
+<style>
+  #caja {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: relative;
+    left: 0;
+    transition: left 0.5s ease-in-out;
+  }
+</style>
+</head>
+<body>
+
+<div id="caja"></div>
+<button onclick="moverDerecha()">Mover Derecha</button>
+<button onclick="moverIzquierda()">Mover Izquierda</button>
+
+<script>
+function moverDerecha() {
+  const caja = document.getElementById('caja');
+  const distancia = Math.sqrt(Math.pow(window.innerWidth, 2) + Math.pow(window.innerHeight, 2));
+  caja.style.left = `${distancia}px`;
+}
+
+function moverIzquierda() {
+  const caja = document.getElementById('caja');
+  caja.style.left = '0';
+}
+</script>
+
+</body>
+</html>
